@@ -1,9 +1,13 @@
 from bs4 import BeautifulSoup
+import re
 
-with open("index.html", "rb") as f:
+with open("index2.html", "r") as f:
     doc = BeautifulSoup(f, "html.parser")
 #print(doc.prettify())
 
-tags = doc.find_all("p")[0]
-#tag.string = "hello"
-print(tags.find_all("b"))
+tags = doc.find_all("input", type="text")
+for tag in tags:
+    tag['placeholder'] = "I changed you!"
+
+with open("changed.html", "w")  as file:
+    file.write(str(doc))

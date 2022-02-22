@@ -1,0 +1,8 @@
+find()
+find_all()
+
+Create a list of variables to search for using the find or find all method
+    doc.find_all([""])
+    tags = doc.find_all(["option"], text="Undergraduate", value="undergraduate")
+class_ when searching for class variables
+print(list(trs[0].next_siblings)) # Table rows's starting at 0 show all next siblings
